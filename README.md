@@ -1,4 +1,6 @@
-# Creative Theme for Jekyll
+# leanmeantech.com
+
+Based on Creative Theme for Jekyll: https://github.com/volny/creative-theme-jekyll
 
 A Jekyll implementation of the [Creative Theme](http://startbootstrap.com/template-overviews/creative/) template by [Start Bootstrap](http://startbootstrap.com).
 
