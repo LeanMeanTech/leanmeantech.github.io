@@ -54,7 +54,7 @@ This needs to be done once (unless the Dockerfile is updated), if you have
 skip this step.
 
 ```
-cd ~/leanmeantech.github.io/docker;
+cd ~/leanmeantech.github.io/_docker;
 docker build -t leanmeantech/leanmeantech.github.io .;
 ```
 
