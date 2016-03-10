@@ -79,6 +79,19 @@ aside {
         @include sans-serif-font;
         font-weight: 700;
         text-transform: uppercase;
+        
+        img {
+            margin-top: -2px;
+            
+            &.normal {
+                display: none;
+            }
+            
+            &.inverse {
+                display: block;
+            }
+        }
+        
         &:hover,
         &:focus {
             color: darken($theme-primary, 10%);
@@ -117,6 +130,16 @@ aside {
             &:focus {
                 color: white;
             }
+            
+            img {
+                &.normal {
+                    display: block;
+                }
+                
+                &.inverse {
+                    display: none;
+                }
+            }
         }
         .nav > li > a,
         .nav > li > a:focus {
@@ -134,6 +157,16 @@ aside {
                 &:hover,
                 &:focus {
                     color: darken($theme-primary, 10%);
+                }
+                
+                img {
+                    &.normal {
+                        display: none;
+                    }
+                    
+                    &.inverse {
+                        display: block;
+                    }
                 }
             }
             .nav > li > a,
