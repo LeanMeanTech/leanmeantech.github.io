@@ -51,12 +51,36 @@ p {
     color: white;
 }
 
+.bg-white {
+    .text-faded {
+        color: rgba(black, .80);
+    }
+}
+
 .text-faded {
-    color: rgba(white, .7);
+    color: rgba(white, .80);
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
+    
+    &.relative {
+        position: relative;
+    }
+    
+    .spacer {
+        height: 25px;
+    }
+}
+
+@media (min-width: 512px) {
+    section {
+        padding: 100px 0;
+        
+        .spacer {
+            height: 0px;
+        }
+    }
 }
 
 aside {
@@ -67,8 +91,9 @@ aside {
     padding: 0;
 }
 
+// 
 // Navigation
-
+//
 .navbar-default {
     background-color: white;
     border-color: rgba($theme-dark, .5);
@@ -221,8 +246,9 @@ aside {
     }
 }
 
+//
 // Homepage Header
-
+// 
 header {
     position: relative;
     width: 100%;
@@ -232,30 +258,7 @@ header {
     background-image: url('../img/header/4.jpg');
     // text-align: center;
     color: #FFF;
-    
-    .header-footer {
-        position: absolute;
-        bottom: 25px;
-        height: 50px;
-        width: 100%;
-                
-        background-repeat: no-repeat;
-        background-position: center;
-        background-image: url('../img/down_subtle_icon.png');
-        background-size: 50px 50px;
         
-        opacity: 0.75;
-        &:hover {
-            opacity: 1;
-        }
-    }
-    
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        .header-footer {
-            background-image: url('../img/down_subtle_icon@2x.png');
-        }
-    }
-    
     .header-content {
         position: relative;
         // text-align: center;
@@ -343,8 +346,76 @@ header {
     
 }
 
-// Sections
+//
+// Section + Header Shared
+//
+.header-footer, .section-footer {
+    position: absolute;
+    bottom: 5px;
+    height: 50px;
+    width: 100%;
+            
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../img/down_subtle_icon.png');
+    background-size: 50px 50px;
+    
+    opacity: 0.75;
+    
+    &:hover {
+        opacity: 1;
+    }
+    
+    &.inverse {
+        background-image: url('../img/down_subtle_inverse_icon.png');
+    }
+    
+    @media (min-width: 512px) {
+        bottom: 25px;
+    }
+}
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .header-footer, .section-footer {
+        background-image: url('../img/down_subtle_icon@2x.png');
+        
+        &.inverse {
+            background-image: url('../img/down_subtle_inverse_icon@2x.png');
+        }
+    }    
+}
+
+//
+// Testimony   
+//
+section#testimony {
+    @include sans-serif-font;
+    
+    h2 {
+        margin-top: 0px;
+    }
+    
+    .signature {
+        text-align: right;
+    }
+    
+    @media (min-width: 1170px) {
+        img {
+            margin-top: 25px;
+        }
+        
+        .testimony {
+            border-right: 3px solid rgba(#2a6ebb, .5);
+        }
+        
+        .signature {
+            padding-left: 25px;
+            text-align: left;
+        }
+    }
+}
+
+// Sections
 .section-heading {
     margin-top: 0;
 }
