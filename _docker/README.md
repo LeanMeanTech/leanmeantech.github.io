@@ -77,7 +77,7 @@ docker exec -it leanmeantech.github.io /bin/bash;
 **Run Jekyll**
 ```
 # on container
-cd /opt/apps/leanmeantech.github.io; jekyll serve --host=0.0.0.0;
+cd /opt/apps/leanmeantech.github.io; jekyll serve --host=0.0.0.0 --force_polling;
 ```
 
 **Stopping Container**

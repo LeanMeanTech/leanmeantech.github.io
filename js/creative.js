@@ -28,12 +28,32 @@
     });
 
     // Fit Text Plugin for Main Header
+    /*
     $("h1").fitText(
         1.2, {
             minFontSize: '35px',
             maxFontSize: '65px'
         }
     );
+    */
+    
+    /* Type Effect in Header */
+    function typeEffect(element, text) {
+        var i = 1;
+        
+        var tick = function () {
+            element.text(text.substr(0, i));
+            
+            if(i < text.length) {
+                i++;
+                setTimeout(tick, 75);
+            }
+        };
+        
+        tick();        
+    }
+    
+    typeEffect($("#header-type-effect"), "App by App");
 
     // Offset for Main Navigation
     $('#mainNav').affix({

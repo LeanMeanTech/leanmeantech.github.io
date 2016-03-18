@@ -64,3 +64,8 @@
 {
 	font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+
+@mixin straight-corners() {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
