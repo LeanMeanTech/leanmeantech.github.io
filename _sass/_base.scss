@@ -5,7 +5,9 @@ body {
 }
 
 body {
-    @include serif-font;
+    // @include serif-font;
+    @include sans-serif-font;
+    // background-color: $theme-primary;
 }
 
 hr {
@@ -33,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-    @include sans-serif-font;
+    @include sans-serif-header-font;
 }
 
 p {
@@ -90,6 +92,39 @@ aside {
 .no-padding {
     padding: 0;
 }
+
+// Temp
+// span.big {
+//     font-size: 192px;
+//     line-height: 1em;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     
+//     margin: 0px 10px 0px 10px;
+//     clear: both;
+//     display: inline-block;
+//     padding: 30px;
+//     background-color: white;
+//     color: $theme-primary;
+// }
+
+//
+// Pulsate
+//
+@keyframes pulsate {
+    0% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 0.60;
+    }
+    
+    100% {
+        opacity: 0.75;
+    }
+}
+
 
 // 
 // Navigation
@@ -351,7 +386,7 @@ header {
 //
 .header-footer, .section-footer {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     height: 50px;
     width: 100%;
             
@@ -362,12 +397,21 @@ header {
     
     opacity: 0.75;
     
+    animation-duration: 2s;
+    animation-name: pulsate;
+    animation-iteration-count: infinite;
+    
     &:hover {
+        animation: none !important;
         opacity: 1;
     }
     
     &.inverse {
         background-image: url('../img/down_subtle_inverse_icon.png');
+    }
+    
+    &.extra-bottom {
+        bottom: 25px;
     }
     
     @media (min-width: 512px) {
@@ -412,6 +456,23 @@ section#testimony {
             padding-left: 25px;
             text-align: left;
         }
+    }
+}
+
+//
+// Contact
+//
+section#contact {
+    background-color: #525252;
+}
+@media (min-width: 768px) {
+    section#contact {
+        background-image: url('../img/comp-phone2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        // height: 100%;
+        // width: 100%;
     }
 }
 
