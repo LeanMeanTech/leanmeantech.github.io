@@ -8,6 +8,7 @@ body {
     // @include serif-font;
     @include sans-serif-font;
     // background-color: $theme-primary;
+    // background: url('../img/comp/subtle_white_feathers_@2X.png');
 }
 
 hr {
@@ -48,12 +49,18 @@ p {
     background-color: $theme-primary;
 }
 
+.bg-light {
+    background: url('../img/comp/grey.jpg');
+    color: $theme-primary;
+}
+
 .bg-dark {
     background-color: $theme-dark;
+    background-image: url('../img/comp/footer_lodyas.png');
     color: white;
 }
 
-.bg-white {
+.bg-white, .bg-light {
     .text-faded {
         color: rgba(black, .80);
     }
@@ -66,6 +73,10 @@ p {
 section {
     padding: 50px 0;
     
+    &.notop {
+        padding-top: 0px !important;
+    }
+    
     &.relative {
         position: relative;
     }
@@ -73,11 +84,19 @@ section {
     .spacer {
         height: 25px;
     }
+    
+    &.border-primary-top {
+        border-top: 5px solid $theme-primary;
+    }
 }
 
 @media (min-width: 512px) {
     section {
         padding: 100px 0;
+        
+        &.notop {
+            padding-top: 0px !important;
+        }
         
         .spacer {
             height: 0px;
@@ -449,7 +468,7 @@ section#testimony {
         }
         
         .testimony {
-            border-right: 3px solid rgba(#2a6ebb, .5);
+            border-right: 3px solid rgba($theme-external-homeaway-blue, .5);
         }
         
         .signature {
