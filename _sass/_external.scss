@@ -26,10 +26,15 @@ section {
             background: $theme-external-homeaway-blue;
             
             p {
+                color: white;
                 margin-top: 0px;
                 
-                &.text-faded {
-                    color: rgba(white, .80);
+                .text-faded {
+                    color: rgba(white, .90);
+                }
+                
+                .text-quote {
+                    color: rgba(white, .70);
                 }
             }
         }
