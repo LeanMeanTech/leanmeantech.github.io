@@ -65,4 +65,63 @@
     // Initialize WOW.js Scrolling Animations
     new WOW({mobile: false}).init();
 
+    // Simple Email Decryption
+    // http://rot13.florianbersier.com/    
+    document.getElementById("obf").innerHTML="<n uers=\"znvygb:uryyb@yrnazrnagrpu.pbz\" >uryyb@yrnazrnagrpu.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    
+    // Contact Form Submission
+    $("#contact form").submit(function( event ) {
+        event.preventDefault();
+        
+        var sendTo = "uryyb@yrnazrnagrpu.pbz".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);})
+        
+        function validateEmail(email) {
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            return emailReg.test(email);
+        }
+        
+        var valid = true;
+        
+        var contact_name = $(this).find("#contact_name");
+        if(!contact_name.val() || contact_name.val().length < 3) {
+            contact_name.parent().addClass("has-feedback has-error");
+            valid = false;
+        } else {
+            contact_name.parent().removeClass("has-feedback has-error");
+        }
+        
+        var contact_email = $(this).find("#contact_email");
+        if(!contact_email.val() || !validateEmail(contact_email.val())) {
+            contact_email.parent().addClass("has-feedback has-error");
+            valid = false;
+        } else {
+            contact_email.parent().removeClass("has-feedback has-error");
+        }
+        
+        var contact_message = $(this).find("#contact_message");
+        
+        if(!valid) {
+            return;
+        }
+        
+        $($(this)).hide();
+        $("#contact .pending").show();
+        
+        var url = "https://formspree.io/" + sendTo;
+        var data = {"email": contact_email.val(), "name": contact_name.val(), "message": contact_message.val()}
+        
+        $.ajax({
+            url: url,
+            method: "POST",
+            data: data,
+            dataType: "json"
+        }).done(function() {
+            $("#contact .success").show();
+        }).fail(function() {
+            $("#contact .failure").show();
+        }).always(function() {
+            $("#contact .pending").hide();
+        });        
+    });
+    
 })(jQuery); // End of use strict

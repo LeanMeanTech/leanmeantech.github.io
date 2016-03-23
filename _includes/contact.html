@@ -2,35 +2,58 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">STUB STUB STUB</h2>
-                <hr class="-light">
+            <div class="col-lg-4 col-lg-offset-2">
+                <h2 class="section-heading callout">Get in touch!</h2>
+                <!-- <hr> -->
+                <br /><br />
                 <p class="text-faded">
                     Ready to start your next project with us? That's great! 
-                    Give us a call or send us an email and we will get back 
-                    to you as soon as possible!
+                    Fill out our contact form or send us an email 
+                    and we will get back to you as soon as possible!
+                </p>
+                <p class="">
+                    <span id="obf"></span>
                 </p>
             </div>
-    <!--        
-        <div class="col-lg-3 col-lg-offset-2 text-center">
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-                <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.twitter_username }}</p>
-            </a>
-        </div>
-        <div class="col-lg-3 col-lg-offset-2 text-center">
-            <a href="mailto:{{ site.email }}">
-            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.email }}</p>
-            </a>
-        </div>
-
-        <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="https://github.com/{{ site.github_username }}">
-            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.github_username }}</p>
-            </a>
-        </div>
--->
+            <div class="col-lg-3 col-lg-offset-1" id="contact_form">
+                <div class="success">
+                    <h2 class="section-heading">Success!</h2>
+                    <p class="text-faded">
+                        Your contact request has been received, we will get back 
+                        to you as soon as possible!
+                    </p>
+                </div>
+                <div class="pending">
+                    <h2 class="section-heading">Hold Tight...<h2>
+                </div>
+                <div class="failure">
+                    <h2 class="section-heading">Oops<h2>
+                    <p class="text-faded">
+                        Something went wrong, please send us an email instead.
+                    </p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="contact_name">Your Name</label>
+                        <input type="text" class="form-control" id="contact_name" maxlength="128" placeholder="Name">
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block">Please enter your name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_email">Your Email</label>
+                        <input type="email" class="form-control" id="contact_email" placeholder="Email">
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block">Invalid Email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_message">Message (Optional)</label>
+                        <textarea class="form-control" rows="2" id="contact_message"></textarea>
+                    </div>
+                    <div class="form-group" style="display:none">
+                        <input type="text" name="_gotcha" style="display:none" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-xl pull-right">Submit</button>
+                </form>
+            </div>
     </div>
 </section>

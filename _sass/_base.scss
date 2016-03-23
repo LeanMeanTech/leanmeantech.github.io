@@ -34,6 +34,15 @@ h4,
 h5,
 h6 {
     @include sans-serif-header-font;
+    
+    &.callout {
+        line-height: 1em;
+        text-transform: uppercase;
+        color: white;
+        display: inline-block;
+        padding: 10px;
+        background-color: $theme-primary;
+    }
 }
 
 p {
@@ -49,6 +58,10 @@ p {
 .bg-light {
     background: url('../img/patterns/grey.jpg');
     color: $theme-primary;
+    
+    form {
+        color: black;
+    }
 }
 
 .bg-dark {
@@ -729,6 +742,28 @@ section#contact {
 #contact .fa {
     color: $theme-dark;
     font-size: 4em;
+}
+
+#contact {
+    .success, .pending, .failure {
+        display: none;
+    }
+    
+    .form-control-feedback, .help-block {
+        display: none;
+    }
+    
+    .has-error {
+        .form-control-feedback, .help-block {
+            display: block;
+        }
+    }
+    
+    // .error {
+    //     color: $theme-primary;
+    //     margin-top: 5px;
+    //     margin-left: 10px;
+    // }
 }
 
 // Extras
