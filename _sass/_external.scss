@@ -6,7 +6,10 @@ $theme-external-homeaway-dark-blue: #15375d;
 section {
     &.external-homeaway {        
         border-top: 5px solid $theme-external-homeaway-dark-blue;
-        background: $theme-external-homeaway-blue;
+        
+        @media (min-width: 768px) {
+            background: $theme-external-homeaway-blue;
+        }
         
         .signature {
             background: #FFF;
@@ -22,8 +25,101 @@ section {
             }
         }
         
-        .testimony {            
+        .testimony {
             background: $theme-external-homeaway-blue;
+            
+            p {
+                color: white;
+                margin-top: 0px;
+                
+                .text-faded {
+                    color: rgba(white, .90);
+                }
+                
+                .text-quote {
+                    color: rgba(white, .70);
+                }
+            }
+        }
+    }
+}
+
+$theme-external-silvercar-turquoise: #45abc7;
+
+// Above w/ a 50% opacity #000
+$theme-external-silvercar-dark-turquoise: #225563;
+
+section {
+    &.external-silvercar {        
+        border-top: 5px solid $theme-external-silvercar-dark-turquoise;
+        
+        @media (min-width: 768px) {
+            background: $theme-external-silvercar-turquoise;
+        }
+        
+        .signature {
+            background: #FFF;
+        }
+        
+        .triangle {
+            border-top: 10px solid $theme-external-silvercar-turquoise !important;
+        }
+        
+        @media (min-width: 1170px) {
+            .signature {
+                border-bottom: 5px solid $theme-external-silvercar-dark-turquoise;
+            }
+        }
+        
+        .testimony {
+            background: $theme-external-silvercar-turquoise;
+            
+            p {
+                color: white;
+                margin-top: 0px;
+                
+                .text-faded {
+                    color: rgba(white, .90);
+                }
+                
+                .text-quote {
+                    color: rgba(white, .70);
+                }
+            }
+        }
+    }
+}
+
+$theme-external-adidas-grey: #000000;
+$theme-external-adidas-blue: #0286cd;
+
+// $theme-external-adidas-grey: #f7f7f7;
+// $theme-external-adidas-blue: #ff036a;
+
+section {
+    &.external-adidas {        
+        border-top: 5px solid $theme-external-adidas-blue;
+        
+        @media (min-width: 768px) {
+            background: $theme-external-adidas-grey;
+        }
+        
+        .signature {
+            background: #FFF;
+        }
+        
+        .triangle {
+            border-top: 10px solid $theme-external-adidas-grey !important;
+        }
+        
+        @media (min-width: 1170px) {
+            .signature {
+                border-bottom: 5px solid $theme-external-adidas-blue;
+            }
+        }
+        
+        .testimony {
+            background: $theme-external-adidas-grey;
             
             p {
                 color: white;

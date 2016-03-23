@@ -442,6 +442,26 @@ header {
     }
 }
 
+.carousel {
+    .carousel-indicators {        
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    
+    .section-footer {
+        bottom: 75px;
+    }
+    
+    section.section-testimony {
+        min-height: 400px;
+        
+        // @media (max-width: 768px) {
+        //     min-height: 375px;
+        // }
+    }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     .header-footer, .section-footer {
         background-image: url('../img/down_subtle_icon@2x.png');
@@ -456,7 +476,7 @@ header {
 // Testimony
 // _external.scss will contain client-specific styling
 //
-section#testimony {
+section.section-testimony {
     @include sans-serif-font;
     
     overflow-y: hidden;
@@ -470,7 +490,12 @@ section#testimony {
     }
     
     .signature {
-        text-align: right;        
+        text-align: right;
+        
+        .logo {
+            width: 200px;
+            height: auto;
+        }
     }
     
     .triangle {
@@ -485,6 +510,17 @@ section#testimony {
     
     .testimony {
         padding-top: $section-padding-small;
+        padding-bottom: 25px;
+    }
+    
+    @media (max-width: 768px) {
+        .testimony {
+            min-height: 225px;
+        }
+        
+        .signature {
+            min-height: 200px;
+        }
     }
     
     @media (min-width: 768px) {
