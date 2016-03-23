@@ -12,6 +12,10 @@ section {
             background: #FFF;
         }
         
+        .triangle {
+            border-top: 10px solid $theme-external-homeaway-blue !important;
+        }
+        
         @media (min-width: 1170px) {
             .signature {
                 border-bottom: 5px solid $theme-external-homeaway-dark-blue;

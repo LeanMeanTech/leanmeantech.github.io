@@ -453,16 +453,26 @@ section#testimony {
     }
     
     .signature {
-        text-align: right;
-        
-        padding-top: 25px;
+        text-align: right;        
+    }
+    
+    .triangle {
+        margin: 0 auto;
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+
+        border-top: 10px solid black;
     }
     
     .testimony {
         padding-top: $section-padding-small;
     }
     
-    @media (min-width: 1170px) {
+    @media (min-width: 512px) {
+        padding-top: 25px;
+        
         img {
             margin-top: 25px;
         }
