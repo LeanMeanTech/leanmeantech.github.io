@@ -527,8 +527,11 @@ section#contact {
 }
 
 .portfolio-popin {
-    padding: 25px 0px 25px 0px;
+    // padding: 25px 0px 25px 0px;
     background: $theme-primary;
+    
+    // Prevent crowding on hover
+    margin-top: 25px;
     
     .logo {
         position: relative;
@@ -536,37 +539,40 @@ section#contact {
         height: 150px;
         margin: 0px auto 0px auto;
         
+        // height: 75px;
+        // width: 150px;
+        
         @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
             height: 75px;
             width: 150px;
         }
     }
     
-    .caption {
-        display: none;
-        position: absolute;
-        bottom: 0;
-        opacity: 0;
-        width: 100%;
-        padding: 10px;
-        background-color: $theme-dark;
-        color: white;
-        display: block;
-        text-align: center;
-        .project-category,
-        .project-name {
-            @include sans-serif-font;
-            padding: 0 15px;
-        }
-        .project-category {
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .project-name {
-            font-size: 18px;
-        }
-    }
+    // .caption {
+    //     display: none;
+    //     position: absolute;
+    //     bottom: 0;
+    //     opacity: 0;
+    //     width: 100%;
+    //     padding: 10px;
+    //     background-color: $theme-dark;
+    //     color: white;
+    //     display: block;
+    //     text-align: center;
+    //     .project-category,
+    //     .project-name {
+    //         @include sans-serif-font;
+    //         padding: 0 15px;
+    //     }
+    //     .project-category {
+    //         text-transform: uppercase;
+    //         font-weight: 600;
+    //         font-size: 14px;
+    //     }
+    //     .project-name {
+    //         font-size: 18px;
+    //     }
+    // }
     
     img {
         position: absolute;
@@ -595,11 +601,11 @@ section#contact {
         }
         
         @media (min-width: 768px) {
-            .caption {
-                opacity: 1;
-            }
+            // .caption {
+            //     opacity: 1;
+            // }
             
-            min-height: 225px;
+            //min-height: 225px;
         }
     }
     
@@ -608,16 +614,12 @@ section#contact {
     }
     
     @media (min-width: 768px) {
-        padding: 25px 25px 0px 25px;
-        min-height: 200px;
-        
-        .logo {
-            
-        }
-        
-        .caption {
-            display: block;
-        }
+        //padding: 25px 25px 0px 25px;
+        //min-height: 200px;
+                
+        // .caption {
+        //     display: block;
+        // }
     }
 
 }
