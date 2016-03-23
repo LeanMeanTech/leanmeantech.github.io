@@ -5,10 +5,7 @@ body {
 }
 
 body {
-    // @include serif-font;
     @include sans-serif-font;
-    // background-color: $theme-primary;
-    // background: url('../img/comp/subtle_white_feathers_@2X.png');
 }
 
 hr {
@@ -64,19 +61,32 @@ p {
     .text-faded {
         color: rgba(black, .80);
     }
+    
+    // Highlight Color Customization
+    // Additional Styling at EOF
+    p::-moz-selection {
+        background: $theme-primary !important;
+    }
+
+    p::selection {
+        background: $theme-primary !important;
+    }
 }
 
 .text-faded {
     color: rgba(white, .80);
 }
 
+// Generic + Mobile Section Styling
 section {
     padding: $section-padding-small 0;
     
+    // Remove Top Padding, this is useful when managing padding internall (e.g. testimony)
     &.notop {
         padding-top: 0px !important;
     }
     
+    // Remove Bottom Padding, but only on extra-small devices
     &.nobottom-xs {
         padding-bottom: 0px;
         
@@ -85,10 +95,12 @@ section {
         }
     }
     
+    // Sections will generally need this class if using .header-footer or .section-footer
     &.relative {
         position: relative;
     }
     
+    // 25px spacer, this is only shown on extra-small devices
     .spacer {
         height: 25px;
     }
@@ -100,8 +112,21 @@ section {
     &.border-dark-top {
         border-top: 5px solid $theme-dark;
     }
+    
+    &.border-extra-dark-top {
+        border-top: 5px solid #333;
+    }
+    
+    &.border-extra-dark-bottom {
+        border-bottom: 5px solid #333;
+    }
+    
+    .section-heading {
+        margin-top: 0;
+    }
 }
 
+// Desktop Section Styling
 @media (min-width: 512px) {
     section {
         padding: $section-padding-large 0;
@@ -116,31 +141,17 @@ section {
     }
 }
 
+// Mini Section
 aside {
-    padding: 50px 0;
+    padding: $section-padding-small 0;
 }
 
 .no-padding {
     padding: 0;
 }
 
-// Temp
-// span.big {
-//     font-size: 192px;
-//     line-height: 1em;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     
-//     margin: 0px 10px 0px 10px;
-//     clear: both;
-//     display: inline-block;
-//     padding: 30px;
-//     background-color: white;
-//     color: $theme-primary;
-// }
-
 //
-// Pulsate
+// Pulsate (Subtle Animation)
 //
 @keyframes pulsate {
     0% {
@@ -187,20 +198,6 @@ aside {
             }
         }
         
-        /*
-        img {
-            margin-top: -2px;
-            
-            &.normal {
-                display: none;
-            }
-            
-            &.inverse {
-                display: block;
-            }
-        }
-        */
-        
         &:hover,
         &:focus {
             color: darken($theme-primary, 10%);
@@ -240,17 +237,6 @@ aside {
                 color: white;
             }
             
-            /*
-            img {
-                &.normal {
-                    display: block;
-                }
-                
-                &.inverse {
-                    display: none;
-                }
-            }*/
-            
             .navbar-brand-image {
                 background-image: url('../img/header_logo_white.png');
             }
@@ -278,18 +264,6 @@ aside {
                 &:focus {
                     color: darken($theme-primary, 10%);
                 }
-                
-                /*
-                img {
-                    &.normal {
-                        display: none;
-                    }
-                    
-                    &.inverse {
-                        display: block;
-                    }
-                }
-                */
                 
                 .navbar-brand-image {
                     background-image: url('../img/header_logo_theme.png');
@@ -322,12 +296,10 @@ header {
     @include background-cover;
     background-position: center;
     background-image: url('../img/header/4.jpg');
-    // text-align: center;
     color: #FFF;
         
     .header-content {
         position: relative;
-        // text-align: center;
         padding: 100px 15px 100px;
         width: 100%;
         .header-content-inner {
@@ -414,6 +386,7 @@ header {
 
 //
 // Section + Header Shared
+// Shows the "next" downward arrow
 //
 .header-footer, .section-footer {
     position: absolute;
@@ -442,6 +415,7 @@ header {
         opacity: 1;
     }
     
+    // Show a white icon, instead of a black one
     &.inverse {
         background-image: url('../img/down_subtle_inverse_icon.png');
     }
@@ -466,7 +440,8 @@ header {
 }
 
 //
-// Testimony   
+// Testimony
+// _external.scss will contain client-specific styling
 //
 section#testimony {
     @include sans-serif-font;
@@ -513,23 +488,18 @@ section#testimony {
 // Contact
 //
 section#contact {
-    background-color: #525252;
+    // background-color: #525252;
 }
+/*
 @media (min-width: 768px) {
     section#contact {
         background-image: url('../img/comp-phone2.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        // height: 100%;
-        // width: 100%;
     }
 }
-
-// Sections
-.section-heading {
-    margin-top: 0;
-}
+*/
 
 .service-box {
     max-width: 400px;
@@ -540,6 +510,106 @@ section#contact {
     p {
         margin-bottom: 0;
     }
+}
+
+#portfolio {
+    background: $theme-primary;
+}
+
+.portfolio-popin {
+    padding: 25px 0px 25px 0px;
+    background: $theme-primary;
+    
+    .logo {
+        position: relative;
+        width: 300px;
+        height: 150px;
+        margin: 0px auto 0px auto;
+        
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+            height: 75px;
+            width: 150px;
+        }
+    }
+    
+    .caption {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: $theme-dark;
+        color: white;
+        display: block;
+        text-align: center;
+        .project-category,
+        .project-name {
+            @include sans-serif-font;
+            padding: 0 15px;
+        }
+        .project-category {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .project-name {
+            font-size: 18px;
+        }
+    }
+    
+    img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        
+        &.blank {
+            opacity: 1;
+        }
+        
+        &.normal {
+            opacity: 0;
+        }
+    }
+    
+    &:hover {
+        @include transition-all;
+        background: white;
+        
+        img.blank {
+            opacity: 0;
+        }
+        
+        img.normal {
+            opacity: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .caption {
+                opacity: 1;
+            }
+            
+            min-height: 225px;
+        }
+    }
+    
+    :hover, :visited, :link, :active {
+        text-decoration: none !important;
+    }
+    
+    @media (min-width: 768px) {
+        padding: 25px 25px 0px 25px;
+        min-height: 200px;
+        
+        .logo {
+            
+        }
+        
+        .caption {
+            display: block;
+        }
+    }
+
 }
 
 .portfolio-box {
