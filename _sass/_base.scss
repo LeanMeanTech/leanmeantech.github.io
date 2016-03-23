@@ -71,10 +71,18 @@ p {
 }
 
 section {
-    padding: 50px 0;
+    padding: $section-padding-small 0;
     
     &.notop {
         padding-top: 0px !important;
+    }
+    
+    &.nobottom-xs {
+        padding-bottom: 0px;
+        
+        @media (min-width: 768px) {
+            padding-bottom: $section-padding-large;
+        }
     }
     
     &.relative {
@@ -88,11 +96,15 @@ section {
     &.border-primary-top {
         border-top: 5px solid $theme-primary;
     }
+    
+    &.border-dark-top {
+        border-top: 5px solid $theme-dark;
+    }
 }
 
 @media (min-width: 512px) {
     section {
-        padding: 100px 0;
+        padding: $section-padding-large 0;
         
         &.notop {
             padding-top: 0px !important;
@@ -420,6 +432,11 @@ header {
     animation-name: pulsate;
     animation-iteration-count: infinite;
     
+    &.block {
+        position: relative;
+        display: block;
+    }
+    
     &:hover {
         animation: none !important;
         opacity: 1;
@@ -454,12 +471,20 @@ header {
 section#testimony {
     @include sans-serif-font;
     
+    overflow-y: hidden;
+    
     h2 {
         margin-top: 0px;
     }
     
     .signature {
         text-align: right;
+        
+        padding-top: 25px;
+    }
+    
+    .testimony {
+        padding-top: $section-padding-small;
     }
     
     @media (min-width: 1170px) {
@@ -468,12 +493,18 @@ section#testimony {
         }
         
         .testimony {
-            border-right: 3px solid rgba($theme-external-homeaway-blue, .5);
+            padding-top: $section-padding-large;
         }
         
         .signature {
+            padding-top: $section-padding-large;
+            padding-bottom: 25px;
             padding-left: 25px;
             text-align: left;
+            
+            -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
         }
     }
 }

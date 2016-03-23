@@ -37,6 +37,9 @@
 $theme-primary: #a92d2d;
 $theme-dark: #424342;
 
+$section-padding-small: 50px;
+$section-padding-large: 100px;
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",

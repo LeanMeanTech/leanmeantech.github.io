@@ -4,32 +4,21 @@ $theme-external-homeaway-blue: #2a6ebb;
 $theme-external-homeaway-dark-blue: #15375d;
 
 section {
-    &.external-homeaway {
-        overflow-y: hidden;
-        
+    &.external-homeaway {        
         border-top: 5px solid $theme-external-homeaway-dark-blue;
         background: $theme-external-homeaway-blue;
         
         .signature {
-            // margin-top: -5px;
-            border-bottom: 5px solid $theme-external-homeaway-dark-blue;
-            
-            // border-top: 25px solid #95b7dd;
-            padding-top: 100px;
-            
             background: #FFF;
-            // padding-top: 100px;
-            padding-bottom: 25px;
-            
-            -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-            box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
         }
         
-        .testimony {
-            padding-top: 100px;
-            
-            // assdas
+        @media (min-width: 1170px) {
+            .signature {
+                border-bottom: 5px solid $theme-external-homeaway-dark-blue;
+            }
+        }
+        
+        .testimony {            
             background: $theme-external-homeaway-blue;
             
             p {
@@ -39,10 +28,6 @@ section {
                     color: rgba(white, .80);
                 }
             }
-            
-            // -webkit-border-radius: 20px 0px 0px 20px;
-            // -moz-border-radius: 20px 0px 0px 20px;
-            // border-radius: 20px 0px 0px 20px;
         }
     }
 }
