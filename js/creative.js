@@ -103,6 +103,12 @@
         }
         
         var contact_message = $(this).find("#contact_message");
+        if(!contact_message.val() || contact_message.val().length < 10) {
+            contact_message.parent().addClass("has-error");
+            valid = false;
+        } else {
+            contact_message.parent().removeClass("has-error");
+        }
         
         if(!valid) {
             return;
