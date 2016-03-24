@@ -90,18 +90,15 @@ section {
     }
 }
 
-$theme-external-adidas-grey: #000000;
-$theme-external-adidas-blue: #0286cd;
-
-// $theme-external-adidas-grey: #f7f7f7;
-// $theme-external-adidas-blue: #ff036a;
+$theme-external-adidas-blue: #0071bc;
+$theme-external-adidas-dark-blue: #194058;
 
 section {
     &.external-adidas {        
-        border-top: 5px solid $theme-external-adidas-blue;
+        border-top: 5px solid $theme-external-adidas-dark-blue;
         
         @media (min-width: 768px) {
-            background: $theme-external-adidas-grey;
+            background: $theme-external-adidas-blue;
         }
         
         .signature {
@@ -109,17 +106,17 @@ section {
         }
         
         .triangle {
-            border-top: 10px solid $theme-external-adidas-grey !important;
+            border-top: 10px solid $theme-external-adidas-blue !important;
         }
         
         @media (min-width: 1170px) {
             .signature {
-                border-bottom: 5px solid $theme-external-adidas-blue;
+                border-bottom: 5px solid $theme-external-adidas-dark-blue;
             }
         }
         
         .testimony {
-            background: $theme-external-adidas-grey;
+            background: $theme-external-adidas-blue;
             
             p {
                 color: white;
