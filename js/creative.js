@@ -62,6 +62,12 @@
 
     // Initialize WOW.js Scrolling Animations
     new WOW({mobile: false}).init();
+    
+    // Disable Carousel on Mobile
+    // Depends on xs-test element w/ visible-xs-block class + bootstrap
+    if($("#xs-test").is(":visible")) {
+        $("#testimony").carousel("pause");
+    }
 
     // Simple Email Decryption
     // http://rot13.florianbersier.com/    
