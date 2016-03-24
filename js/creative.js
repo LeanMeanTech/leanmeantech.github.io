@@ -71,7 +71,7 @@
 
     // Simple Email Decryption
     // http://rot13.florianbersier.com/    
-    document.getElementById("obf").innerHTML="<n uers=\"znvygb:uryyb@yrnazrnagrpu.pbz\" >uryyb@yrnazrnagrpu.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    //document.getElementById("obf").innerHTML="<n uers=\"znvygb:uryyb@yrnazrnagrpu.pbz\" >uryyb@yrnazrnagrpu.pbz</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
     
     // Contact Form Submission
     $("#contact form").submit(function( event ) {
