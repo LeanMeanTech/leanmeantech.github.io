@@ -91,6 +91,22 @@ p {
     color: rgba(white, .80);
 }
 
+#blankout {
+    position: fixed;
+    background: $theme-dark;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+}
+
+#blankout-hint {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
 // Generic + Mobile Section Styling
 section {
     padding: $section-padding-small 0;
@@ -309,6 +325,8 @@ header {
     min-height: auto;
     @include background-cover;
     background-position: center;
+    // This image is also loaded in _includes/scripts.html,
+    // make sure to update the path there as well!
     background-image: url('../img/header/8.jpg');
     color: #FFF;
         

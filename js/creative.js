@@ -53,8 +53,6 @@
         tick();        
     }
     
-    typeEffect($("#header-type-effect"), "App by App");
-
     // Offset for Main Navigation
     $('#mainNav').affix({
         offset: {
@@ -123,5 +121,19 @@
             $("#contact .pending").hide();
         });        
     });
+    
+    var start = false;
+    
+    function hideBlankout() {
+        if(!start) {
+            typeEffect($("#header-type-effect"), "App by App");
+            $("#blankout").hide();
+            $("#blankout-hint").hide();
+            start = true;
+        }
+    }
+    
+    $("#blankout-hint").load(hideBlankout);
+    $(window).load(hideBlankout);
     
 })(jQuery); // End of use strict
