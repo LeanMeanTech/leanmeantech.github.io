@@ -6,6 +6,7 @@ body {
 
 body {
     @include sans-serif-font;
+    background: $theme-primary;
 }
 
 hr {
@@ -560,23 +561,6 @@ section.section-testimony {
     }
 }
 
-//
-// Contact
-//
-section#contact {
-    // background-color: #525252;
-}
-/*
-@media (min-width: 768px) {
-    section#contact {
-        background-image: url('../img/comp-phone2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-}
-*/
-
 .service-box {
     max-width: 400px;
     margin: 50px auto 0;
@@ -787,7 +771,9 @@ section#contact {
     @include straight-corners();
 }
 
+//
 // Contact
+//
 #contact .fa {
     color: $theme-dark;
     font-size: 4em;
@@ -806,6 +792,10 @@ section#contact {
         .form-control-feedback, .help-block {
             display: block;
         }
+    }
+    
+    input, select, textarea {
+        font-size: 16px;
     }
     
     // .error {
