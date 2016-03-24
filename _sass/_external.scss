@@ -27,19 +27,6 @@ section {
         
         .testimony {
             background: $theme-external-homeaway-blue;
-            
-            p {
-                color: white;
-                margin-top: 0px;
-                
-                .text-faded {
-                    color: rgba(white, .90);
-                }
-                
-                .text-quote {
-                    color: rgba(white, .70);
-                }
-            }
         }
     }
 }
@@ -73,19 +60,6 @@ section {
         
         .testimony {
             background: $theme-external-silvercar-turquoise;
-            
-            p {
-                color: white;
-                margin-top: 0px;
-                
-                .text-faded {
-                    color: rgba(white, .90);
-                }
-                
-                .text-quote {
-                    color: rgba(white, .70);
-                }
-            }
         }
     }
 }
@@ -116,20 +90,7 @@ section {
         }
         
         .testimony {
-            background: $theme-external-adidas-blue;
-            
-            p {
-                color: white;
-                margin-top: 0px;
-                
-                .text-faded {
-                    color: rgba(white, .90);
-                }
-                
-                .text-quote {
-                    color: rgba(white, .70);
-                }
-            }
+            background: $theme-external-adidas-blue;            
         }
     }
 }

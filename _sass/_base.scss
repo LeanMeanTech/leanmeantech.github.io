@@ -511,6 +511,19 @@ section.section-testimony {
     .testimony {
         padding-top: $section-padding-small;
         padding-bottom: 25px;
+        
+        p {
+            color: white;
+            margin-top: 0px;
+            
+            .text-faded {
+                color: rgba(white, .90);
+            }
+            
+            .text-quote {
+                color: rgba(white, .70);
+            }
+        }
     }
     
     @media (max-width: 768px) {
