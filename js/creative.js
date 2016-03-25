@@ -73,6 +73,14 @@
             $("#testimony").carousel("pause");
         }, 500);
     }
+    
+    // Carousel Swipe EVents on Mobile
+    $("#testimony").swiperight(function() {  
+        $("#testimony").carousel('prev');  
+    });  
+    $("#testimony").swipeleft(function() {  
+        $("#testimony").carousel('next');  
+    });  
 
     // Simple Email Decryption
     // http://rot13.florianbersier.com/    
