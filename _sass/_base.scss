@@ -395,7 +395,7 @@ header {
         }
     }
             
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (min-height: 768px) {
         min-height: 100%;
         .header-content {
             position: absolute;
