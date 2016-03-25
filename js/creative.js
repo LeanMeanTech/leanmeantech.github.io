@@ -66,7 +66,12 @@
     // Disable Carousel on Mobile
     // Depends on xs-test element w/ visible-xs-block class + bootstrap
     if($("#xs-test").is(":visible")) {
-        $("#testimony").carousel("pause");
+        
+        // Carousel doesn't give us an event for when it starts, so a timeout 
+        // is necessary
+        setTimeout(function () {
+            $("#testimony").carousel("pause");
+        }, 500);
     }
 
     // Simple Email Decryption
