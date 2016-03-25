@@ -502,6 +502,8 @@ header {
 }
 
 .carousel {
+    background: $theme-dark;
+    
     .carousel-indicators {        
         @media (max-width: 768px) {
             display: none;
@@ -568,8 +570,7 @@ section.section-testimony {
     }
     
     .testimony {
-        padding-top: $section-padding-small;
-        padding-bottom: 25px;
+        padding-top: $section-padding-tiny;
         
         p {
             color: white;
@@ -584,14 +585,20 @@ section.section-testimony {
             }
         }
     }
-    
-    @media (max-width: 768px) {
+        
+    @media (max-width: 576px) {
         .testimony {
-            min-height: 225px;
+            min-height: 205px;
         }
         
         .signature {
-            min-height: 200px;
+            min-height: 190px;
+        }
+    }
+    
+    @media (max-width: 384px) {
+        .testimony {
+            min-height: 250px;
         }
     }
     
