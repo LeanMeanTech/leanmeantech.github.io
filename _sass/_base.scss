@@ -327,13 +327,21 @@ aside {
 header {
     position: relative;
     width: 100%;
-    min-height: auto;
+    min-height: 100%;
     @include background-cover;
     background-position: center;
     // This image is also loaded in _includes/scripts.html,
     // make sure to update the path there as well!
     background-image: url('../img/header/8.jpg');
     color: #FFF;
+    
+    /*
+    @media screen and (max-height: 550px) {        
+        .header-content-inner {
+            margin-top: 100px !important;
+        }
+    }
+    */
         
     .header-content {
         position: relative;
@@ -372,14 +380,40 @@ header {
             }
             
             .btn-container {
-                @media (max-width: 768px) {
+                //@media (max-width: 768px) {
                     text-align: center;
-                }
+                //}
             }
             
             .btn {
                 @media (min-width: 768px) {
                     margin: 0px 0px 0px 10px;
+                }
+            }
+        }
+    }
+    
+    @media (min-width: 768px) and (min-height: 576px) {
+        .header-content {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            padding: 0 50px;
+            .header-content-inner {
+                max-width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    
+    @media (min-width: 360px) {
+        .header-content {
+            .header-content-inner {
+                span.big {
+                    font-size: 24px;
                 }
             }
         }
@@ -394,21 +428,10 @@ header {
             }
         }
     }
-            
-    @media (min-width: 768px) and (min-height: 768px) {
-        min-height: 100%;
-        .header-content {
-            position: absolute;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            padding: 0 50px;
-            .header-content-inner {
-                max-width: 1000px;
-                margin-left: auto;
-                margin-right: auto;
                 
+    @media (min-width: 768px) {
+        .header-content {
+            .header-content-inner {
                 span.big {
                     font-size: 48px;
                     padding: 15px;
@@ -420,7 +443,7 @@ header {
             }
         }
     }
-    
+        
     @media (min-width: 970px) {
         .header-content {
             .header-content-inner {
