@@ -162,51 +162,53 @@
     $(window).load(hideBlankout);
     
     // Map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG10LWFlcmdhc2hldiIsImEiOiJjaW1jZjU3aGwwMDB1dWRrb2t6NDg3cGlmIn0.hOjOYqYQlRzKNTQfr53etQ';
-    var mapOptions = {
-        container: 'map',
-        style: 'mapbox://styles/mapbox/light-v8',
-        zoom: 14,
-        center: [-97.743202, 30.267000],
-        pitch: 30,
-        bearing: 0,
-        interactive: false
-    }
-    
-    if (!mapboxgl.supported()) {
-        $("#map").hide();
-    } else {
-        var map = new mapboxgl.Map(mapOptions);
+    $.getScript("https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js").done(function(script, textStatus) {
+        $("#map").show();
+        mapboxgl.accessToken = 'pk.eyJ1IjoibG10LWFlcmdhc2hldiIsImEiOiJjaW1jZjU3aGwwMDB1dWRrb2t6NDg3cGlmIn0.hOjOYqYQlRzKNTQfr53etQ';
+        var mapOptions = {
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v8',
+            zoom: 14,
+            center: [-97.743202, 30.267000],
+            pitch: 30,
+            bearing: 0,
+            interactive: false
+        }
         
-        map.on('style.load', function () {
-            map.addSource("symbols", {
-                "type": "geojson",
-                "data": {
-                    "type": "FeatureCollection",
-                    "features": [
-                        {
-                            "type": "Feature",
-                            "properties": {},
-                            "geometry": {
-                                "type": "Point",
-                                "coordinates": [
-                                    -97.743000,
-                                    30.268603
-                                ]
-                            }
-                        }
-                    ]
-                }
-            });
+        if (!mapboxgl.supported()) {
             
-            // These guys don't support markers with a color, seriously...?
-            map.addLayer({
-                "id": "symbols",
-                "type": "circle",
-                "source": "symbols",
-                "paint": {"circle-color": "#a92d2d", "circle-radius": 7}
+        } else {
+            var map = new mapboxgl.Map(mapOptions);
+            
+            map.on('style.load', function () {
+                map.addSource("symbols", {
+                    "type": "geojson",
+                    "data": {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "properties": {},
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -97.743000,
+                                        30.268603
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                });
+                
+                // These guys don't support markers with a color, seriously...?
+                map.addLayer({
+                    "id": "symbols",
+                    "type": "circle",
+                    "source": "symbols",
+                    "paint": {"circle-color": "#a92d2d", "circle-radius": 7}
+                });
             });
-        });
-    }
-    
+        }
+    });
 })(jQuery); // End of use strict
