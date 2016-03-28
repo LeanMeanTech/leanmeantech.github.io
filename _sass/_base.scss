@@ -138,6 +138,10 @@ section {
     // 25px spacer, this is only shown on extra-small devices
     .spacer {
         height: 25px;
+        
+        &.clear {
+            clear: both;
+        }
     }
     
     &.border-primary-top {
@@ -854,6 +858,10 @@ section.section-testimony {
     @include button-variant(white, $theme-primary, $theme-primary);
 }
 
+.btn-secondary {
+    @include button-variant(white, $theme-dark, $theme-dark);
+}
+
 .btn {
     @include sans-serif-font;
     border: none;
@@ -902,6 +910,11 @@ section.section-testimony {
     //     margin-top: 5px;
     //     margin-left: 10px;
     // }
+    
+    #map {
+        background: $theme-dark;
+        min-height: 200px;
+    }
 }
 
 // Extras

@@ -1,51 +1,11 @@
 <section id="contact" class="bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-lg-offset-2">
-                <h2 class="section-heading callout">Get in touch!</h2>
-                <!-- <hr> -->
-                <br /><br />
+            <div class="col-lg-4 col-lg-offset-1 clearfix" id="contact_form">
+                {% include contact-form.html %}
             </div>
-            <div class="col-lg-3 col-lg-offset-1" id="contact_form">
-                <div class="success">
-                    <h2 class="section-heading">Success!</h2>
-                    <p class="text-faded">
-                        Your contact request has been received, we will get back 
-                        to you as soon as possible!
-                    </p>
-                </div>
-                <div class="pending">
-                    <h2 class="section-heading">Hold Tight...</h2>
-                </div>
-                <div class="failure">
-                    <h2 class="section-heading">Oops</h2>
-                    <p class="text-faded">
-                        Something went wrong, please send us an email instead.
-                    </p>
-                </div>
-                <form>
-                    <div class="form-group">
-                        <label for="contact_name">Your Name</label>
-                        <input type="text" class="form-control" id="contact_name" maxlength="128" placeholder="Name">
-                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block">Please enter your name</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_email">Your Email</label>
-                        <input type="email" class="form-control" id="contact_email" placeholder="Email">
-                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block">Invalid Email</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_message">Message</label>
-                        <textarea class="form-control" rows="2" id="contact_message"></textarea>
-                        <span class="help-block">Please leave a short message</span>
-                    </div>
-                    <div class="form-group" style="display:none">
-                        <input type="text" name="_gotcha" style="display:none" />
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-xl pull-right">Submit</button>
-                </form>
+            <div class="col-lg-5 col-lg-offset-1 clearfix" id="contact_map">
+                {% include contact-map.html %}
             </div>
         </div>
     </div>
